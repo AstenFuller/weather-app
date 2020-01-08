@@ -1,7 +1,12 @@
 import React from 'react';
 
 export default class WeatherInfo extends React.Component {
+    constructor(props){
+        super(props);
+
+    }
     render() {
+        const { city } = this.props;
         return (
             <div>
                 <div className='row'>
@@ -9,33 +14,33 @@ export default class WeatherInfo extends React.Component {
                         <div className='panel panel-info border-info'>
                             <div className='panel-header'>City Information</div>
                             <div className='panel-content city-display'>
-                                <h4>Tokyo</h4>
-                                <p>Lat/Long: 35.69, 139.69</p>
+                                <h4>{city.city.name}</h4>
+                                <p>Lat/Long: {city.city.coord.lon}, {city.city.coord.lat}</p>
                             </div>
                             <div className='grid'>
                                 <div className='gridRow'>
                                     <p className='info-description'>Temperature (F)</p>
-                                    <p className='info-data'>65.62F</p>
+                                    <p className='info-data'>{city.city.main.temp}</p>
                                 </div>
                                 <div className='gridRow'>
                                     <p className='info-description'>Pressure</p>
-                                    <p className='info-data'>997</p>
+                                    <p className='info-data'>{city.city.main.pressure}</p>
                                 </div>
                                 <div className='gridRow'>
                                     <p className='info-description'>Humidity</p>
-                                    <p className='info-data'>39%</p>
+                                    <p className='info-data'>{city.city.main.humidity}</p>
                                 </div>
                                 <div className='gridRow'>
                                     <p className='info-description'>Lowest Temp (F)</p>
-                                    <p className='info-data'>62.01F</p>
+                                    <p className='info-data'>{city.city.main.temp_min}</p>
                                 </div>
                                 <div className='gridRow'>
                                     <p className='info-description'>Highest Temp (F)</p>
-                                    <p className='info-data'>71.01F</p>
+                                    <p className='info-data'>{city.city.main.temp_max}</p>
                                 </div>
                                 <div className='gridRow'>
                                     <p className='info-description'>Wind Speed</p>
-                                    <p className='info-data'>24.16mph</p>
+                                    <p className='info-data'>{city.city.wind.speed}</p>
                                 </div>
                             </div>
                         </div>

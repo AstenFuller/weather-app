@@ -1,9 +1,10 @@
 import React from 'react';
-import CityInput from './components/CityInput/inputs';
-import WeatherInfo from './components/WeatherInfo/weatherInfo';
+import CityInput from './components/CityInput';
+import WeatherInfo from './components/WeatherInfo';
 
 
 export default class App extends React.Component {
+  
   render() {
     return (
       <div className='container'>
