@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import WeatherInfo from './weatherInfo';
+import WeatherInfo from './WeatherInfo';
 
     function mapStoreToProps(store) {
         return {
