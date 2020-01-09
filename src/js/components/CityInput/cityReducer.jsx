@@ -44,6 +44,17 @@ export default function CityReducer(state = defaultState, action) {
             }
         }
 
+        case 'UPDATE_HISTORY': {
+            const { city, time, hour } = action.payload;
+            return {
+                ...state,
+                history: [
+                    ...state.history,
+                    { city, time, hour }
+                ]
+            }
+        }
+
         default: {
             return state;
         }

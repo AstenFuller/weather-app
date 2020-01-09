@@ -25,3 +25,10 @@ export function addToList(city) {
         payload: { city }
     }
 }
+
+export function updateHistory(city, time, hour){
+    return {
+        type: 'UPDATE_HISTORY',
+        payload: { city, time, hour }
+    }
+}

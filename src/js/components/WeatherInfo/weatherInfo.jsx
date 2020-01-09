@@ -49,31 +49,15 @@ export default class WeatherInfo extends React.Component {
                         <div className='panel panel-info border-info'>
                             <div className='panel-header'>Search History</div>
                             <div className='search-history'>
+                                {
+                                    city.history.map( history => (
                                 <div className='search-item grid'>
-                                    <p className='search-item'>San Diego</p>
-                                    <p className='search-item one'>08/14/2016</p>
-                                    <p className='search-item two'>15:34:46</p>
+                                    <p className='search-item'>{history.city}</p>
+                                    <p className='search-item one'>{history.time}</p>
+                                    <p className='search-item two'>{history.hour}</p>
                                 </div>
-                                <div className='search-item grid'>
-                                    <p className='search-item'>New York</p>
-                                    <p className='search-item one'>08/14/2016</p>
-                                    <p className='search-item two'>15:34:46</p>
-                                </div>
-                                <div className='search-item grid'>
-                                    <p className='search-item'>Washington D.C.</p>
-                                    <p className='search-item one'>08/14/2016</p>
-                                    <p className='search-item two'>15:34:46</p>
-                                </div>
-                                <div className='search-item grid'>
-                                    <p className='search-item'>Tokyo</p>
-                                    <p className='search-item one'>08/14/2016</p>
-                                    <p className='search-item two'>15:34:46</p>
-                                </div>
-                                <div className='search-item grid'>
-                                    <p className='search-item'>London</p>
-                                    <p className='search-item one'>08/14/2016</p>
-                                    <p className='search-item two'>15:34:46</p>
-                                </div>
+                                ))
+                                }
                             </div>
                         </div>
                     </div>

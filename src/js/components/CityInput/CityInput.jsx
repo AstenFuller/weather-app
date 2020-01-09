@@ -15,10 +15,24 @@ export default class CityInput extends React.Component {
 
     handleGetCityInfo(e) {
         const cityName = e.target.value;
+        const date = new Date();
+        const day = date.getDate();
+        const month = date.getMonth();
+        const year = date.getFullYear();
+        const fullDate = day + '-' + month + '-' + year;
+        const hour = date.getHours();
+        const minute = date.getMinutes();
+        const second = date.getSeconds();
+        const fullTime = hour + ':' + minute + ':' + second;
+
         const { dispatch } = this.props;
         fetch(`/search/${cityName}`)
             .then(response => response.json())
-            .then(data => dispatch(updateCityInfo(data)))
+            .then(data => {
+                dispatch(updateCityInfo(data))
+                dispatch(updateHistory(data.name, fullDate, fullTime))
+            })
+            
     }
 
     handleGetCityInput(e) {
@@ -28,11 +42,24 @@ export default class CityInput extends React.Component {
     }
 
     handleSubmit() {
+        const date = new Date();
+        const day = date.getDate();
+        const month = date.getMonth();
+        const year = date.getFullYear();
+        const fullDate = day + '-' + month + '-' + year;
+        const hour = date.getHours();
+        const minute = date.getMinutes();
+        const second = date.getSeconds();
+        const fullTime = hour + ':' + minute + ':' + second;
+
         const { city, dispatch } = this.props;
 
         fetch(`/search/${city.input}`)
             .then(response => response.json())
-            .then(data => dispatch(submitCity(data)))
+            .then(data => {
+                dispatch(submitCity(data))
+                dispatch(updateHistory(data.name, fullDate, fullTime))
+            })
     }
 
     render() {
