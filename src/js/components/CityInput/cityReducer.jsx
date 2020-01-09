@@ -15,6 +15,7 @@ const defaultState = {
     },
     input: '',
     history: [],
+    showInfo: false,
     
 }
 
@@ -25,7 +26,8 @@ export default function CityReducer(state = defaultState, action) {
         case 'UPDATE_CITY_INFO': {
             return {
                 ...state,
-                city: payload.city
+                city: payload.city,
+                showInfo: true,
             }
         }
 
@@ -41,6 +43,7 @@ export default function CityReducer(state = defaultState, action) {
                 ...state,
                 city: payload.city,
                 input: '',
+                showInfo: true,
             }
         }
 
@@ -48,6 +51,7 @@ export default function CityReducer(state = defaultState, action) {
             const { city, time, hour } = action.payload;
             return {
                 ...state,
+                action: '',
                 history: [
                     ...state.history,
                     { city, time, hour }

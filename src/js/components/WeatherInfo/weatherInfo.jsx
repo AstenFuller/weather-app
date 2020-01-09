@@ -7,6 +7,7 @@ export default class WeatherInfo extends React.Component {
     }
     render() {
         const { city } = this.props;
+
         return (
             <div>
                 <div className='row'>
@@ -49,12 +50,12 @@ export default class WeatherInfo extends React.Component {
                         <div className='panel panel-info border-info'>
                             <div className='panel-header'>Search History</div>
                             <div className='search-history'>
-                                {
-                                    city.history.map( history => (
-                                <div className='search-item grid'>
-                                    <p className='search-item'>{history.city}</p>
-                                    <p className='search-item one'>{history.time}</p>
-                                    <p className='search-item two'>{history.hour}</p>
+                                {   
+                                    city.history.map( (history, index) => (
+                                <div className='search-item grid' key={index}>
+                                    <p className='search-item' >{history.city}</p>
+                                    <p className='search-item one' >{history.time}</p>
+                                    <p className='search-item two' >{history.hour}</p>
                                 </div>
                                 ))
                                 }

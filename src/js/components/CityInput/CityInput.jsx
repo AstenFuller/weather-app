@@ -19,7 +19,7 @@ export default class CityInput extends React.Component {
         const day = date.getDate();
         const month = date.getMonth();
         const year = date.getFullYear();
-        const fullDate = day + '-' + month + '-' + year;
+        const fullDate = day + '-' + (month + 1) + '-' + year;
         const hour = date.getHours();
         const minute = date.getMinutes();
         const second = date.getSeconds();
@@ -46,7 +46,7 @@ export default class CityInput extends React.Component {
         const day = date.getDate();
         const month = date.getMonth();
         const year = date.getFullYear();
-        const fullDate = day + '-' + month + '-' + year;
+        const fullDate = day + '-' + (month + 1) + '-' + year;
         const hour = date.getHours();
         const minute = date.getMinutes();
         const second = date.getSeconds();
@@ -78,8 +78,8 @@ export default class CityInput extends React.Component {
                             onClick={this.handleGetCityInfo}>New York</button>
                         <button
                             className='city-btn'
-                            value="Washington D.C"
-                            onClick={this.handleGetCityInfo}>Washington D.C</button>
+                            value="Baltimore"
+                            onClick={this.handleGetCityInfo}>Baltimore</button>
                         <button
                             className='city-btn'
                             value="Tokyo"
